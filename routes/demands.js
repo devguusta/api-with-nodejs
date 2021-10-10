@@ -9,8 +9,13 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
+    const demand = {
+        id_demand: req.params.id_demand,
+        quantity: req.body.quantity
+    }
     res.status(201).send({
-        menssage: "Usando o POST dentro da rota de DEMANDS"
+        menssage: "O Pedido foi criado",
+        demandCreated: demand,
     });
 });
 router.patch('/', (req, res, next) => {

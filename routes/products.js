@@ -9,8 +9,13 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
+    const product = {
+      name:  req.body.name,
+      price: req.body.price
+    };
     res.status(201).send({
-        menssage: "Usando o POST dentro da rota de produtos"
+        menssage: "Produto Criado",
+        produtoCriado: product
     });
 });
 router.patch('/', (req, res, next) => {
